@@ -1,10 +1,13 @@
+require 'rainbow'
 
+
+ while true 
 
 puts "What calculator would you like to use? Please choose advanced or basic"
 type = gets.chomp
 
 if type == "basic" 
-   puts "What would you like to do? Please choose add, subtract, divide or multiply ?"
+   puts "What would you like to do? Please choose add, subtract, divide, multiply or exit ?"
    input = gets.chomp.downcase 
    
 if input == "add"
@@ -20,7 +23,7 @@ elsif input == "subtract"
    puts subone - subtwo
 
 elsif input == "divide"
-   puts "please put the first number in, press enter, then put in the second number, and press enter."
+   puts "please put the first number in, press enter, then put in the second number, and press enter.".color("red")
    divone = gets.chomp.to_f
    divtwo = gets.chomp.to_f
    puts divone / divtwo
@@ -39,7 +42,7 @@ elsif input == "multiply"
 
    
  if type == "advanced"    
-   puts "What would you like to do? Please choose exponent or square root"
+   puts "What would you like to do? Please choose exponent, square root or exit"
    advanced_input = gets.chomp.downcase
   
   if advanced_input == "exponent"
@@ -55,9 +58,11 @@ elsif input == "multiply"
   else 
     puts "Please enter a valid function"
   end     
+ end
+ if "exit" == true 
+   break
+ end
 end
-
-
 
 
 # choose basic or advanced calc
